@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {Table} from 'react-bootstrap'
 
 function App() {
+
+  const student=[
+    {name:'abid',age:'24',address:'bgp'},
+    {name:'abid',age:'24',address:'bgp'},
+    {name:'abid',age:'24',address:'bgp'},
+    {name:'abid',age:'24',address:'bgp'},
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Table border={2} >
+        <tr>
+          <td>name</td>
+          <td>age</td>
+          <td>address</td>
+        </tr>
+        {
+          student.map((item,i)=>
+          <tr key={i}>
+
+            <td>{item.name}</td>
+            <td>{item.age}</td>
+            <td>{item.address}</td>
+          </tr>
+          )
+        }
+      </Table>
     </div>
   );
 }
